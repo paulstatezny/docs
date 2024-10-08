@@ -39,7 +39,9 @@ jobs:
           elixir-version: '1.17.3'
       - name: ExDoc
         shell: bash
-        run: mix docs
+        run: |
+          mix deps.get
+          mix docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
