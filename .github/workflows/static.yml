@@ -34,6 +34,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - uses: erlef/setup-beam@v1
+        with:
+          otp-version: '26'
+          elixir-version: '1.17.3'
       - name: ExDoc
         shell: bash
         run: mix docs
